@@ -8,6 +8,8 @@ import (
 	"reflect"
 
 	"github.com/iancoleman/orderedmap"
+	buildsv1alpha1 "github.com/katanomi/builds/pkg/apis/builds/v1alpha1"
+	deliveriesv1alpha1 "github.com/katanomi/deliveries/pkg/apis/deliveries/v1alpha1"
 	"github.com/redhat-developer/tekton-jsongenerator/jsonschema"
 	pipelinev1 "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1"
 	pipelinev1beta1 "github.com/tektoncd/pipeline/pkg/apis/pipeline/v1beta1"
@@ -233,4 +235,11 @@ func main() {
 	dump(&triggersv1beta1.TriggerBindingList{}, "triggers.tekton.dev/v1beta1", "TriggerBindingList")
 	dump(&triggersv1beta1.ClusterTriggerBinding{}, "triggers.tekton.dev/v1beta1", "ClusterTriggerBinding")
 	dump(&triggersv1beta1.ClusterTriggerBindingList{}, "triggers.tekton.dev/v1beta1", "ClusterTriggerBindingList")
+
+	dump(&buildsv1alpha1.Build{}, "builds.katanomi.dev/v1alpha1", "Build")
+	dump(&buildsv1alpha1.BuildYaml{}, "builds.katanomi.dev/v1alpha1", "BuildYaml")
+	dump(&buildsv1alpha1.BuildRun{}, "builds.katanomi.dev/v1alpha1", "BuildRun")
+
+	dump(&deliveriesv1alpha1.Delivery{}, "deliveries.katanomi.dev/v1alpha1", "Delivery")
+	dump(&deliveriesv1alpha1.DeliveryRun{}, "deliveries.katanomi.dev/v1alpha1", "DeliveryRun")
 }
